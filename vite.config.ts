@@ -12,4 +12,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      // 参加者用（index.html）と抽選画面（host.html）の 2 ページをビルドする
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        host: path.resolve(__dirname, "host.html"),
+      },
+    },
+  },
 });
